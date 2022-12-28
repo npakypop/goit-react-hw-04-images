@@ -12,7 +12,7 @@ export const Loader = () => {
         wrapperClass=""
         visible={true}
         ariaLabel="oval-loading"
-        secondaryColor="#4fa94d"
+        secondaryColor="#BEBEBE"
         strokeWidth={2}
         strokeWidthSecondary={2}
       />

@@ -1,3 +1,5 @@
+import css from './ImageGalleryItem.module.css';
+
 export const ImageGalleryItem = ({
   webformatURL,
   largeImageURL,
@@ -5,8 +7,15 @@ export const ImageGalleryItem = ({
   setModalImg,
 }) => {
   return (
-    <li onClick={() => setModalImg(largeImageURL)}>
-      <img src={webformatURL} alt={tags} />
+    <li
+      className={css.ImageGalleryItem}
+      onClick={() => setModalImg(largeImageURL)}
+    >
+      <img
+        className={css.ImageGalleryItemImage}
+        src={webformatURL}
+        alt={tags}
+      />
     </li>
   );
 };

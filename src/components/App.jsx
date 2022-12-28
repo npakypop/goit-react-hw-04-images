@@ -5,6 +5,7 @@ import { Button } from './Button/Button';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Modal } from './Modal/Modal';
 import { Loader } from './Loader/Loader';
+import css from './App.module.css';
 
 export class App extends Component {
   state = {
@@ -27,7 +28,6 @@ export class App extends Component {
           this.state.query,
           this.state.page
         );
-        console.log(photos);
         this.setState(prevState => ({
           photos: [...prevState.photos, ...photos],
           isBtnShow: this.state.page < Math.ceil(totalHits / 12),
@@ -54,7 +54,7 @@ export class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className={css.App}>
         <Searchbar onFormSubmit={this.onFormSubmit} />
         <ImageGallery
           photos={this.state.photos}
