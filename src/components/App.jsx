@@ -28,6 +28,12 @@ export class App extends Component {
           this.state.query,
           this.state.page
         );
+        //====================================
+        if (photos.length === 0) {
+          alert('there is no matches');
+          return;
+        }
+        //=====================================
         this.setState(prevState => ({
           photos: [...prevState.photos, ...photos],
           isBtnShow: this.state.page < Math.ceil(totalHits / 12),
@@ -45,6 +51,12 @@ export class App extends Component {
   };
 
   onFormSubmit = query => {
+    //==============================================
+    if (query === this.state.query) {
+      alert('this query has already been completed');
+      return;
+    }
+    //==================================================
     this.setState({ query, photos: [], page: 1 });
   };
 
