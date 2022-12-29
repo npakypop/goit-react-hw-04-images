@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import css from './Modal.module.css';
 import { Component } from 'react';
 
@@ -34,3 +35,8 @@ export class Modal extends Component {
     );
   }
 }
+
+Modal.propTypes = {
+  largeImageURL: PropTypes.string.isRequired,
+  setModalImg: PropTypes.func.isRequired,
+};

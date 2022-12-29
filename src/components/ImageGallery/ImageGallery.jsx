@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { ImageGalleryItem } from '../ImageGalleryItem/ImageGalleryItem';
 import css from './ImageGallery.module.css';
 
@@ -15,4 +16,16 @@ export const ImageGallery = ({ photos, setModalImg }) => {
       ))}
     </ul>
   );
+};
+
+ImageGallery.propTypes = {
+  photos: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      webformatURL: PropTypes.string.isRequired,
+      largeImageURL: PropTypes.string.isRequired,
+      tags: PropTypes.string.isRequired,
+    })
+  ),
+  setModalImg: PropTypes.func.isRequired,
 };
